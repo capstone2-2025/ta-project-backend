@@ -108,23 +108,6 @@ public class DocumentService {
         return documents;
     }
 
-
-
-    @Transactional
-    public boolean cancelRequest(Long documentId) {
-        Optional<Document> documentOptional = documentRepository.findById(documentId);
-
-        if (documentOptional.isPresent()) {
-            Document document = documentOptional.get();
-            document.setStatus(3);  // 상태를 '취소됨(3)'으로 설정
-            document.setUpdatedAt(LocalDateTime.now());
-            documentRepository.save(document);
-            return true;
-        }
-
-        return false;  // 문서를 찾지 못한 경우
-    }
-
     @Transactional
     public boolean deleteDocumentById(Long documentId) {
         Optional<Document> documentOptional = documentRepository.findById(documentId);

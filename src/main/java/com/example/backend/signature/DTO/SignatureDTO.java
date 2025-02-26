@@ -19,7 +19,7 @@ public class SignatureDTO {
     private String imageName;
     private String textData;
 
-    // 🔹 `Signature` 엔티티를 `SignatureDTO`로 변환하는 정적 메서드 추가
+    // 🔹 `Signature` 엔티티를 `SignatureDTO`로 변환하는 정적 메서드
     public static SignatureDTO fromEntity(Signature signature) {
         return new SignatureDTO(
                 signature.getSignerEmail(),
